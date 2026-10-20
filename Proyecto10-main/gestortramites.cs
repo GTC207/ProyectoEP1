@@ -10,7 +10,7 @@ namespace TAREA11
 {
     public class gestortramites
     {
-        public tramites[] Tramites = new tramites[13];
+        public tramites[] Tramites = new tramites[50];
         public int cantidad = 0;
         public void Registrar()
         {
@@ -26,6 +26,15 @@ namespace TAREA11
                 if (codigoAlumno.Length < 9)
                 {
                     Console.WriteLine("Ingrese un codigo de 9 digitos!");
+                    Console.WriteLine("Presiones cualquier tecla para continuar...");
+                    Console.ReadKey();
+                    Registrar();
+                }
+                Console.WriteLine("\nDNI del apoderado: ");
+                int dni = int.Parse(Console.ReadLine());
+                if (dni.ToString().Length != 8)
+                {
+                    Console.WriteLine("Ingrese un DNI valido!");
                     Console.WriteLine("Presiones cualquier tecla para continuar...");
                     Console.ReadKey();
                     Registrar();
@@ -72,7 +81,7 @@ namespace TAREA11
                     Registrar();
                 }
 
-                Tramites[cantidad] = new tramites(codigoAlumno.ToUpper(), char.ToUpper(NombreAlumno[0])+NombreAlumno.Substring(1),ApellidosFormateados, ProfesorFormateado, Grado.ToLower(),Seccion.ToUpper(),nota);
+                Tramites[cantidad] = new tramites(codigoAlumno.ToUpper(),dni, char.ToUpper(NombreAlumno[0])+NombreAlumno.Substring(1),ApellidosFormateados, ProfesorFormateado, Grado.ToLower(),Seccion.ToUpper(),nota);
                 cantidad++;
                 Console.WriteLine("\nTramite registrado");
 
@@ -113,7 +122,9 @@ namespace TAREA11
             for (int i = 0; i < cantidad; i++)
             {
                 Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
+                Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                 Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                 Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                 Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                 Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
@@ -122,6 +133,138 @@ namespace TAREA11
             Console.ReadKey();
             Console.Clear();
             return;
+        }
+        public void ModificarRegistro()
+        {
+            string respuesta;
+            Console.WriteLine("\n=================================");
+            Console.WriteLine("=== MODIFICACION DE REGISTROS ===");
+            Console.WriteLine("=================================\n");
+            Console.Write("Ingrese codigo del estudiante a modificar: ");
+            string code = Console.ReadLine();
+            for(int i = 0;i  < cantidad; i++)
+            {
+                if (Tramites[i].CodigoAlumno.Equals(code))
+                {
+                    Console.WriteLine("\nTrámite localizado: ");
+                    Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
+                    Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
+                    Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
+                    Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
+                    Console.WriteLine("\nDesea continuar? (S/N) : ");
+                    respuesta = Console.ReadLine();
+                    if (respuesta.ToUpper() == "S")
+                    {
+                        Console.WriteLine("\nQue desea modificar?");
+                        Console.WriteLine("\n1. Nombre");
+                        Console.WriteLine("\n2. Apellidos");
+                        Console.WriteLine("\n3. DNI del apoderado");
+                        Console.WriteLine("\n4. Tutor a cargo");
+                        Console.WriteLine("\n5. Grado");
+                        Console.WriteLine("\n6. Seccion");
+                        Console.WriteLine("\n7. Notas");
+                        Console.WriteLine("\n8. Volver al inicio");
+                        Console.Write("\nIngrese una opcion: ");
+                        int _ = int.Parse(Console.ReadLine());
+                        switch (_)
+                        {
+                            case 1:
+                                Console.WriteLine("\nIngrese nuevo nombre: ");
+                                string n_name = Console.ReadLine();
+                                Tramites[i].NombreAlumno = n_name;
+                                Console.WriteLine("\nNombre cambiado con exito!");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            case 2:
+                                Console.WriteLine("\nIngrese nuevos apellidos: ");
+                                string nl_name = Console.ReadLine();
+                                Tramites[i].ApellidosAlumno = nl_name;
+                                Console.WriteLine("\nApellidos cambiados con exito!");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            case 3:
+                                Console.WriteLine("\nIngrese nuevo DNI: ");
+                                int n_dni = int.Parse(Console.ReadLine());
+                                Tramites[i].DNI = n_dni;
+                                Console.WriteLine("\nDNI cambiado con exito!");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            case 4:
+                                Console.WriteLine("\nIngrese nuevo tutor: ");
+                                string n_tutor = Console.ReadLine();
+                                Tramites[i].NombreAlumno = n_tutor;
+                                Console.WriteLine("\nNombre cambiado con exito!");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            case 5:
+                                Console.WriteLine("\nIngrese nuevo grado: ");
+                                string n_grade = Console.ReadLine();
+                                Tramites[i].Grado = n_grade;
+                                Console.WriteLine("\nNombre cambiado con exito!");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            case 6:
+                                Console.WriteLine("\nIngrese nueva seccion: ");
+                                string n_section = Console.ReadLine();
+                                Tramites[i].Seccion = n_section;
+                                Console.WriteLine("\nNombre cambiado con exito!");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            case 7:
+                                Console.WriteLine("\nIngrese nueva nota: ");
+                                int n_note = int.Parse(Console.ReadLine());
+                                Tramites[i].Notas = n_note;
+                                Console.WriteLine("\nNombre cambiado con exito!");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            case 8:
+                                Console.Clear();
+                                return;
+                            default:
+                                Console.WriteLine("\nIngrese una opcion valida! <1-8>");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                ModificarRegistro();
+                                return;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Desea volver al menu inicial? (S/N) :");
+                        respuesta = Console.ReadLine();
+                        if(respuesta.ToUpper() == "S")
+                        {
+                            Console.Clear();
+                            return;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            ModificarRegistro();
+                            return;
+                        }
+                    }
+                }
+                
+
+            }
         }
         public void BuscarPorCodigoAlumno(string codigo)
         {
@@ -134,6 +277,7 @@ namespace TAREA11
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
@@ -179,6 +323,7 @@ namespace TAREA11
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
@@ -224,6 +369,7 @@ namespace TAREA11
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
@@ -268,6 +414,7 @@ namespace TAREA11
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
@@ -312,6 +459,7 @@ namespace TAREA11
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");

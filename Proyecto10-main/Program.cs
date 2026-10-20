@@ -20,11 +20,12 @@ namespace TAREA11
                 Console.WriteLine("=================================================================\n");
                 Console.WriteLine("1. Registrar tramites: ");
                 Console.WriteLine("\n2. Mostrar todos los tramites registrados:");
-                Console.WriteLine("\n3. Ordenar los tramites por seccion utilizando el metodo burbuja:");
-                Console.WriteLine("\n4. Ordenar los tramites por seccion utilizando el metodo Seleccion:");
-                Console.WriteLine("\n5. Buscar tramites :");
-                Console.WriteLine("\n6. mostrar el registro de la mayor nota:");
-                Console.WriteLine("\n7. Salir del programa:");
+                Console.WriteLine("\n3. Modificar registro de un alumno");
+                Console.WriteLine("\n4. Ordenar los tramites por seccion utilizando el metodo burbuja:");
+                Console.WriteLine("\n5. Ordenar los tramites por seccion utilizando el metodo Seleccion:");
+                Console.WriteLine("\n6. Buscar tramites :");
+                Console.WriteLine("\n7. mostrar el registro de la mayor nota:");
+                Console.WriteLine("\n8. Salir del programa:");
                 Console.WriteLine("\n================================================================");
                 Console.Write("\nIngrese una opción: ");
                 op = Convert.ToInt32(Console.ReadLine());
@@ -40,21 +41,24 @@ namespace TAREA11
                         Console.Clear();
                         break;
                     case 3:
+                        gestortramites.ModificarRegistro();
+                        break;
+                    case 4:
                         gestortramites.OrdenamientoBurbuja();
                         gestortramites.Mostrar();
                         break;
-                    case 4:
+                    case 5:
                         gestortramites.OrdenamientoSeleccion();
                         gestortramites.Mostrar();
                         break;
-                    case 5: 
+                    case 6: 
                         gestortramites.buscar();
                         break;
 
-                    case 6:
+                    case 7:
                         gestortramites.MayorNota();
                         break;
-                    case 7: 
+                    case 8: 
                         Console.WriteLine("\nFin de progama, hasta pronto!");
                         Console.WriteLine("Presione cualquier tecla para continuar...");
                         Console.ReadKey();

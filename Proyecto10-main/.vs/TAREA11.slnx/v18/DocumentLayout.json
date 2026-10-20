@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\tramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:tramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|c:\\users\\admin\\documents\\proyectoep1\\proyecto10-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|c:\\users\\admin\\documents\\proyectoep1\\proyecto10-main\\gestortramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\gestortramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:gestortramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\tramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:tramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,45 +21,46 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedWidth": 260,
           "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T03:53:06.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "gestortramites.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\gestortramites.cs",
               "RelativeDocumentMoniker": "gestortramites.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\gestortramites.cs",
               "RelativeToolTip": "gestortramites.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAkwC8AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAKQAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-17T03:53:19.144Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "tramites.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\tramites.cs",
               "RelativeDocumentMoniker": "tramites.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\tramites.cs",
               "RelativeToolTip": "tramites.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-17T03:53:18.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-17T03:53:06.772Z",
+              "WhenOpened": "2026-10-17T03:53:18.317Z",
               "EditorCaption": ""
             }
           ]

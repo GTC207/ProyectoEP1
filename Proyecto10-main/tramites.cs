@@ -9,6 +9,7 @@ namespace TAREA11
     public class tramites
     {
         public string CodigoAlumno { get; set; }
+        public int DNI { get; set; }
         public string NombreAlumno { get; set; }
         public string ApellidosAlumno { get; set;}
         public string TutorProfesor { get; set; }
@@ -16,9 +17,10 @@ namespace TAREA11
         public string Seccion { get; set; }
         public double Notas { get; set; }   
 
-        public tramites(string codigoalumno, string nombrealumno,string apellidosalumno,string tutorprofesor, string grado, string seccion, double notas)
+        public tramites(string codigoalumno,int dni, string nombrealumno,string apellidosalumno,string tutorprofesor, string grado, string seccion, double notas)
         {
             CodigoAlumno = codigoalumno;
+            DNI = dni;
             NombreAlumno = nombrealumno;
             ApellidosAlumno = apellidosalumno;
             TutorProfesor = tutorprofesor;
