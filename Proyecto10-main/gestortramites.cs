@@ -30,12 +30,12 @@ namespace TAREA11
                     Registrar();
                     return;
                 }
-                Console.WriteLine("\nDNI del apoderado: ");
+                Console.Write("\nDNI del apoderado: ");
                 int dni = int.Parse(Console.ReadLine());
                 if (dni.ToString().Length != 8)
                 {
-                    Console.WriteLine("Ingrese un DNI valido!");
-                    Console.WriteLine("Presiones cualquier tecla para continuar...");
+                    Console.WriteLine("\nIngrese un DNI valido!");
+                    Console.WriteLine("\nPresiones cualquier tecla para continuar...");
                     Console.ReadKey();
                     Registrar();
                     return;
@@ -75,8 +75,8 @@ namespace TAREA11
                 double nota = Convert.ToDouble(Console.ReadLine());
                 if(nota < 0 || nota > 20)
                 {
-                    Console.WriteLine("Ingrese una nota valida! <0-20>");
-                    Console.WriteLine("Presione cualquier tecla para continuar...");
+                    Console.WriteLine("\nIngrese una nota valida! <0-20>");
+                    Console.WriteLine("\nPresione cualquier tecla para continuar...");
                     Console.ReadKey();
                     Console.Clear();
                     Registrar();
@@ -664,6 +664,47 @@ namespace TAREA11
             Console.ReadKey();
             Console.Clear();
             return;
+        }
+        public void ImpresionTramite()
+        {
+            string respuesta;
+            Console.Write("\nIngrese codigo del alumno: ");
+            string code = Console.ReadLine();
+            Console.Clear();
+            for(int i = 0;i< cantidad; i++)
+            {
+                if(Tramites[i].CodigoAlumno.Equals(char.ToUpper(code[0]) + code.Substring(1)))
+                {
+                    Console.WriteLine("=====================================================================");
+                    Console.WriteLine("===================== Estrellitas de Fátima =========================");
+                    Console.WriteLine("=====================================================================");
+                    Console.WriteLine($"Estudiante: {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}\n");
+                    Console.WriteLine($"DNI del apoderado: {Tramites[i].DNI}");
+                    Console.WriteLine("---------------------------------------------------------------------");
+                    Console.WriteLine($"\nDocente a cargo:{Tramites[i].TutorProfesor}");
+                    Console.WriteLine("---------------------------------------------------------------------");
+                    Console.WriteLine($"\nGrado: {Tramites[i].Grado}\t||  Seccion: {Tramites[i].Seccion}");
+                    Console.WriteLine("---------------------------------------------------------------------");
+                    Console.WriteLine($"Estimado(a) apoderado(a)\nNos complace informar que el estudiante {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno} ha obtenido una calificación de {Tramites[i].Notas}. Este resultado \nrefleja su esfuerzo, dedicación y compromiso con sus actividades académicas.\n\nFelicitamos al estudiante por este importante logro y reconocemos el apoyo constante de su familia en su proceso de \naprendizaje. \n\nConfiamos en que continuará desarrollando sus capacidades, alcanzando nuevas metas y superándose día a día.\n\nLe animamos a seguir manteniendo el entusiasmo, la responsabilidad y la perseverancia que le permitirán continuar \ncreciendo tanto académica como personalmente.");
+                    Console.WriteLine("\n\nPresione cualquier tecla para continuar...");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
+                }
+            }
+            Console.WriteLine("No se encontraron resultados");
+            Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
+            respuesta = Console.ReadLine();
+            if (respuesta.ToUpper() == "S")
+            {
+                ImpresionTramite();
+                return;
+            }
+            else
+            {
+                Console.Clear();
+                return;
+            }
         }
     }
 }
