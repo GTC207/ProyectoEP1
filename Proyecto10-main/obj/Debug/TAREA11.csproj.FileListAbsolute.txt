@@ -1,0 +1,14 @@
+C:\Users\ADMIN\Downloads\Proyecto10-main\Proyecto10-main\obj\Debug\TAREA11.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Downloads\Proyecto10-main\Proyecto10-main\obj\Debug\TAREA11.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Downloads\Proyecto10-main\Proyecto10-main\bin\Debug\TAREA11.exe.config
+C:\Users\ADMIN\Downloads\Proyecto10-main\Proyecto10-main\bin\Debug\TAREA11.exe
+C:\Users\ADMIN\Downloads\Proyecto10-main\Proyecto10-main\bin\Debug\TAREA11.pdb
+C:\Users\ADMIN\Downloads\Proyecto10-main\Proyecto10-main\obj\Debug\TAREA11.exe
+C:\Users\ADMIN\Downloads\Proyecto10-main\Proyecto10-main\obj\Debug\TAREA11.pdb
+C:\Users\ADMIN\Documents\ProyectoEP10\Proyecto10-main\Proyecto10-main\bin\Debug\TAREA11.exe.config
+C:\Users\ADMIN\Documents\ProyectoEP10\Proyecto10-main\Proyecto10-main\bin\Debug\TAREA11.exe
+C:\Users\ADMIN\Documents\ProyectoEP10\Proyecto10-main\Proyecto10-main\bin\Debug\TAREA11.pdb
+C:\Users\ADMIN\Documents\ProyectoEP10\Proyecto10-main\Proyecto10-main\obj\Debug\TAREA11.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\ProyectoEP10\Proyecto10-main\Proyecto10-main\obj\Debug\TAREA11.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\ProyectoEP10\Proyecto10-main\Proyecto10-main\obj\Debug\TAREA11.exe
+C:\Users\ADMIN\Documents\ProyectoEP10\Proyecto10-main\Proyecto10-main\obj\Debug\TAREA11.pdb
