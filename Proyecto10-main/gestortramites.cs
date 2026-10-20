@@ -1,5 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +28,7 @@ namespace TAREA11
                     Console.WriteLine("Presiones cualquier tecla para continuar...");
                     Console.ReadKey();
                     Registrar();
+                    return;
                 }
                 Console.WriteLine("\nDNI del apoderado: ");
                 int dni = int.Parse(Console.ReadLine());
@@ -38,6 +38,7 @@ namespace TAREA11
                     Console.WriteLine("Presiones cualquier tecla para continuar...");
                     Console.ReadKey();
                     Registrar();
+                    return;
                 }
                 Console.Write("\nPrimer nombre del alumno: ");
                 string NombreAlumno = Console.ReadLine();
@@ -79,6 +80,7 @@ namespace TAREA11
                     Console.ReadKey();
                     Console.Clear();
                     Registrar();
+                    return;
                 }
 
                 Tramites[cantidad] = new tramites(codigoAlumno.ToUpper(),dni, char.ToUpper(NombreAlumno[0])+NombreAlumno.Substring(1),ApellidosFormateados, ProfesorFormateado, Grado.ToLower(),Seccion.ToUpper(),nota);
@@ -137,6 +139,7 @@ namespace TAREA11
         public void ModificarRegistro()
         {
             string respuesta;
+            Console.Clear();
             Console.WriteLine("\n=================================");
             Console.WriteLine("=== MODIFICACION DE REGISTROS ===");
             Console.WriteLine("=================================\n");
@@ -200,7 +203,7 @@ namespace TAREA11
                             case 4:
                                 Console.WriteLine("\nIngrese nuevo tutor: ");
                                 string n_tutor = Console.ReadLine();
-                                Tramites[i].NombreAlumno = n_tutor;
+                                Tramites[i].TutorProfesor = n_tutor;
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -226,7 +229,7 @@ namespace TAREA11
                                 break;
                             case 7:
                                 Console.WriteLine("\nIngrese nueva nota: ");
-                                int n_note = int.Parse(Console.ReadLine());
+                                double n_note = int.Parse(Console.ReadLine());
                                 Tramites[i].Notas = n_note;
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
@@ -264,6 +267,46 @@ namespace TAREA11
                 }
                 
 
+            }
+        }
+
+        public void EliminarRegistro()
+        {
+            string respuesta;
+            Console.Clear();
+            Console.WriteLine("\n=================================");
+            Console.WriteLine("=== ELIMINACION DE REGISTROS ===");
+            Console.WriteLine("=================================\n");
+            Console.Write("Ingrese codigo del estudiante a modificar: ");
+            string code = Console.ReadLine();
+            for (int i = 0; i < cantidad; i++)
+            {
+                if (Tramites[i].CodigoAlumno.Equals(code))
+                {
+                    Console.WriteLine("\nTrámite localizado: ");
+                    Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
+                    Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
+                    Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
+                    Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
+                    Console.WriteLine("\nDesea continuar? (S/N) : ");
+                    respuesta = Console.ReadLine();
+                    if (respuesta.ToUpper() == "S")
+                    {
+                        for(int j = i; j < cantidad - 1; j++)
+                        {
+                            Tramites[j] = Tramites[j + 1];
+                        }
+                        Tramites[cantidad - 1] = null;
+                        cantidad--;
+                        Console.WriteLine("Alumno eliminaod con exito!");
+                        Console.WriteLine("Presione cualquier tecla para continuar...");
+                        Console.ReadKey();
+                        Console.Clear();
+                        return;
+                    }
+                }
             }
         }
         public void BuscarPorCodigoAlumno(string codigo)
@@ -432,23 +475,23 @@ namespace TAREA11
                         return;
                     }
                 }
-                Console.WriteLine("No se encontraron resultados");
-                Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
-                respuesta = Console.ReadLine();
-                if (respuesta.ToUpper() == "S")
-                {
-                    buscar();
-                    return;
-                }
-                else
-                {
-                    Console.Clear();
-                    return;
-                }
+            }
+            Console.WriteLine("No se encontraron resultados");
+            Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
+            respuesta = Console.ReadLine();
+            if (respuesta.ToUpper() == "S")
+            {
+                buscar();
+                return;
+            }
+            else
+            {
+                Console.Clear();
+                return;
             }
         }
 
-        public void BuscarPorNota(int nota)
+        public void BuscarPorNota(double nota)
         {
             string respuesta;
             Console.Clear();
@@ -531,7 +574,7 @@ namespace TAREA11
                     break;
                 case 5:
                     Console.WriteLine("\nIngrese la nota del alumno a buscar: ");
-                    int note = int.Parse(Console.ReadLine());
+                    double note = int.Parse(Console.ReadLine());
                     BuscarPorNota(note);
                     break;
                 case 6:
