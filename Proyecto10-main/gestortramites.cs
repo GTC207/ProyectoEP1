@@ -45,7 +45,7 @@ namespace TAREA11
                 string ApellidosFormateados = apellido1 + " " + apellido2;
                 //
 
-                Console.WriteLine("Profesor o Tutor: ");
+                Console.Write("\nProfesor o Tutor: ");
                 string p_name = Console.ReadLine();
                 //Formato al nombre del profesor
                 int space = p_name.IndexOf(' ');
@@ -284,6 +284,19 @@ namespace TAREA11
                         Console.Clear();
                         return;
                     }
+                }
+                Console.WriteLine("No se encontraron resultados");
+                Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
+                respuesta = Console.ReadLine();
+                if (respuesta.ToUpper() == "S")
+                {
+                    buscar();
+                    return;
+                }
+                else
+                {
+                    Console.Clear();
+                    return;
                 }
             }
         }

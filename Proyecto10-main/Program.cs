@@ -55,10 +55,11 @@ namespace TAREA11
                         gestortramites.MayorNota();
                         break;
                     case 7: 
-                        Console.WriteLine("Fin de progama");
+                        Console.WriteLine("\nFin de progama, hasta pronto!");
                         Console.WriteLine("Presione cualquier tecla para continuar...");
                         Console.ReadKey();
-                        break;
+                        return;
+                        
                     default: 
                         Console.WriteLine("Error! Ingresar correctamente <1-8>");
                         break;
@@ -68,7 +69,7 @@ namespace TAREA11
                 }
 
 
-            } while (op != 0);
+            } while (op != 7);
         }
     }
 }
