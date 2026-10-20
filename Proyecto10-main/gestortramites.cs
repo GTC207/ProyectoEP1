@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace TAREA11
 {
@@ -43,6 +44,19 @@ namespace TAREA11
 
                 string ApellidosFormateados = apellido1 + " " + apellido2;
                 //
+
+                Console.WriteLine("Profesor o Tutor: ");
+                string p_name = Console.ReadLine();
+                //Formato al nombre del profesor
+                int space = p_name.IndexOf(' ');
+                string p_name1 = p_name.Substring(0, space);
+                string p_name2 = p_name.Substring(space + 1);
+
+                p_name1 = char.ToUpper(p_name1[0]) + p_name1.Substring(1);
+                p_name2 = char.ToUpper(p_name2[0]) + p_name2.Substring(1);
+
+                string ProfesorFormateado = p_name1 + " " + p_name2;
+                //
                 Console.Write("\nGrado: ");
                 string Grado = Console.ReadLine();
                 Console.Write("\nSeccion: ");
@@ -58,7 +72,7 @@ namespace TAREA11
                     Registrar();
                 }
 
-                Tramites[cantidad] = new tramites(codigoAlumno.ToUpper(), char.ToUpper(NombreAlumno[0])+NombreAlumno.Substring(1),ApellidosFormateados, Grado.ToLower(),Seccion.ToUpper(),nota);
+                Tramites[cantidad] = new tramites(codigoAlumno.ToUpper(), char.ToUpper(NombreAlumno[0])+NombreAlumno.Substring(1),ApellidosFormateados, ProfesorFormateado, Grado.ToLower(),Seccion.ToUpper(),nota);
                 cantidad++;
                 Console.WriteLine("\nTramite registrado");
 
@@ -100,6 +114,7 @@ namespace TAREA11
             {
                 Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                 Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                 Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                 Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
             }
@@ -119,6 +134,7 @@ namespace TAREA11
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
                     //Mostrar();
@@ -163,6 +179,7 @@ namespace TAREA11
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
 
@@ -202,11 +219,12 @@ namespace TAREA11
             Console.Clear();
             for (int i = 0; i < cantidad; i++)
             {
-                if (Tramites[i].ApellidosAlumno.Contains(char.ToUpper(l_name[0]) + l_name.Substring(1)) || Tramites[i].ApellidosAlumno.Contains(char.ToUpper(l_name[0]) + l_name.Substring(1)))
+                if (Tramites[i].ApellidosAlumno.Contains(char.ToUpper(l_name[0]) + l_name.Substring(1)))
                 {
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
 
@@ -239,6 +257,37 @@ namespace TAREA11
             }
         }
 
+        public void BuscarPorProfesor(string profe)
+        {
+            string respuesta;
+            Console.Clear();
+            for (int i = 0; i < cantidad; i++)
+            {
+                if (Tramites[i].TutorProfesor.Contains(char.ToUpper(profe[0]) + profe.Substring(1)))
+                {
+                    Console.WriteLine("\nTrámite localizado: ");
+                    Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
+                    Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
+                    Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
+
+                    Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
+                    respuesta = Console.ReadLine();
+                    if (respuesta.ToUpper() == "S")
+                    {
+                        buscar();
+                        return;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        return;
+                    }
+                }
+            }
+        }
+
         public void BuscarPorNota(int nota)
         {
             string respuesta;
@@ -250,6 +299,7 @@ namespace TAREA11
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
 
@@ -291,8 +341,9 @@ namespace TAREA11
             Console.WriteLine("1. Buscar por codigo");
             Console.WriteLine("\n2. Buscar por nombre");
             Console.WriteLine("\n3. Buscar por apellidos");
-            Console.WriteLine("\n4. Buscar por nota");
-            Console.WriteLine("\n5. Volver al menu");
+            Console.WriteLine("\n4. Buscar por tutos o profesor");
+            Console.WriteLine("\n5. Buscar por nota");
+            Console.WriteLine("\n6. Volver al menu");
             Console.Write("\nIngrese una opcion: ");
             int _ = int.Parse(Console.ReadLine());
             switch (_)
@@ -313,11 +364,16 @@ namespace TAREA11
                     BuscarPorApellidos(l_name);
                     break;
                 case 4:
+                    Console.Write("\nIngrese nombre del tutor o profesor del alumno a buscar: ");
+                    string proffesor = Console.ReadLine();
+                    BuscarPorProfesor(proffesor);
+                    break;
+                case 5:
                     Console.WriteLine("\nIngrese la nota del alumno a buscar: ");
                     int note = int.Parse(Console.ReadLine());
                     BuscarPorNota(note);
                     break;
-                case 5:
+                case 6:
                     Console.Clear();
                     return;
                 default:
