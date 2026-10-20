@@ -147,7 +147,7 @@ namespace TAREA11
             string code = Console.ReadLine();
             for(int i = 0;i  < cantidad; i++)
             {
-                if (Tramites[i].CodigoAlumno.Equals(code))
+                if (Tramites[i].CodigoAlumno.Equals(char.ToUpper(code[0]) + code.Substring(1)))
                 {
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
@@ -156,7 +156,7 @@ namespace TAREA11
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
-                    Console.WriteLine("\nDesea continuar? (S/N) : ");
+                    Console.Write("\nDesea continuar? (S/N) : ");
                     respuesta = Console.ReadLine();
                     if (respuesta.ToUpper() == "S")
                     {
@@ -281,7 +281,7 @@ namespace TAREA11
             string code = Console.ReadLine();
             for (int i = 0; i < cantidad; i++)
             {
-                if (Tramites[i].CodigoAlumno.Equals(code))
+                if (Tramites[i].CodigoAlumno.Equals(char.ToUpper(code[0]) + code.Substring(1)))
                 {
                     Console.WriteLine("\nTrámite localizado: ");
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
@@ -290,7 +290,7 @@ namespace TAREA11
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
-                    Console.WriteLine("\nDesea continuar? (S/N) : ");
+                    Console.Write("\nDesea continuar? (S/N) : ");
                     respuesta = Console.ReadLine();
                     if (respuesta.ToUpper() == "S")
                     {
@@ -693,7 +693,7 @@ namespace TAREA11
                 }
             }
             Console.WriteLine("No se encontraron resultados");
-            Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
+            Console.Write("\nDesea buscar otro alumno? (S/N) :");
             respuesta = Console.ReadLine();
             if (respuesta.ToUpper() == "S")
             {

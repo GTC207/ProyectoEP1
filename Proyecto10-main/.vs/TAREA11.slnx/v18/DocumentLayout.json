@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|c:\\users\\admin\\documents\\proyectoep1\\proyecto10-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\gestortramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:gestortramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|c:\\users\\admin\\documents\\proyectoep1\\proyecto10-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\tramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,30 +22,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 260,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwEIAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-17T03:53:06.772Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "gestortramites.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\gestortramites.cs",
               "RelativeDocumentMoniker": "gestortramites.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\gestortramites.cs",
               "RelativeToolTip": "gestortramites.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwMUCAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAAA7wJ4AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-17T03:53:19.144Z",
               "EditorCaption": ""
@@ -60,8 +60,7 @@
               "RelativeToolTip": "tramites.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-17T03:53:18.317Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-17T03:53:18.317Z"
             }
           ]
         }

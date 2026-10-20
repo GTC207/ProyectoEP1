@@ -18,7 +18,7 @@ namespace TAREA11
                 Console.WriteLine("\n==============================================================");
                 Console.WriteLine("********* REGISTRO DEL NIDO ESTRELLITA DE FATIMA *************");
                 Console.WriteLine("==============================================================\n");
-                Console.WriteLine("1. Registrar tramite: ");
+                Console.WriteLine("1. Registrar alumno: ");
                 Console.WriteLine("\n2. Mostrar todos los tramites registrados:");
                 Console.WriteLine("\n3. Modificar registro de un alumno");
                 Console.WriteLine("\n4. Ordenar los tramites por seccion utilizando el metodo burbuja:");
