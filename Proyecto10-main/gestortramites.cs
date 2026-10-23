@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace TAREA11
 {
@@ -11,8 +14,53 @@ namespace TAREA11
     {
         public tramites[] Tramites = new tramites[50];
         public int cantidad = 0;
+        public string ruta = "tramites.txt";
+
+        public gestortramites()
+        {
+            Cargar();
+        }
+        public void Guardar()
+        {
+            StreamWriter archivo = new StreamWriter(ruta);
+            for (int i = 0; i < cantidad; i++)
+            {
+                archivo.WriteLine(Tramites[i].CodigoAlumno + "|" +
+                    Tramites[i].DNI + "|" +
+                    Tramites[i].NombreAlumno + "|"+
+                    Tramites[i].ApellidosAlumno + "|"+
+                    Tramites[i].TutorProfesor + "|"+
+                    Tramites[i].Grado + "|"+
+                    Tramites[i].Seccion + "|"+
+                    Tramites[i].Notas);
+            }
+
+            archivo.Close();
+        }
+
+        public void Cargar()
+        {
+            if(File.Exists(ruta) == false)
+            {
+                return;
+            }
+
+            StreamReader archivo = new StreamReader(ruta);
+            string linea = archivo.ReadLine();
+
+            while(linea != null)
+            {
+                string[] campos = linea.Split('|');
+
+                Tramites[cantidad] = new tramites(campos[0], int.Parse(campos[1]), campos[2], campos[3], campos[4], campos[5], campos[6], double.Parse(campos[7]));
+                cantidad++;
+                linea = archivo.ReadLine();
+            }
+            archivo.Close();
+        }
         public void Registrar()
         {
+            
             string respuesta;
             if (cantidad < Tramites.Length)
             {
@@ -85,6 +133,7 @@ namespace TAREA11
 
                 Tramites[cantidad] = new tramites(codigoAlumno.ToUpper(),dni, char.ToUpper(NombreAlumno[0])+NombreAlumno.Substring(1),ApellidosFormateados, ProfesorFormateado, Grado.ToLower(),Seccion.ToUpper(),nota);
                 cantidad++;
+                Guardar(); //linea agregada (guarda los registros dentro de un txt)
                 Console.WriteLine("\nTramite registrado");
 
                 Console.Write("\nDesea registrar otro alumno? (S/N) : ");
@@ -123,7 +172,6 @@ namespace TAREA11
             Console.WriteLine("=================\n");
             for (int i = 0; i < cantidad; i++)
             {
-                Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                 Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                 Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                 Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
@@ -177,6 +225,7 @@ namespace TAREA11
                                 Console.WriteLine("\nIngrese nuevo nombre: ");
                                 string n_name = Console.ReadLine();
                                 Tramites[i].NombreAlumno = n_name;
+                                Guardar();
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -186,6 +235,7 @@ namespace TAREA11
                                 Console.WriteLine("\nIngrese nuevos apellidos: ");
                                 string nl_name = Console.ReadLine();
                                 Tramites[i].ApellidosAlumno = nl_name;
+                                Guardar();
                                 Console.WriteLine("\nApellidos cambiados con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -195,6 +245,7 @@ namespace TAREA11
                                 Console.WriteLine("\nIngrese nuevo DNI: ");
                                 int n_dni = int.Parse(Console.ReadLine());
                                 Tramites[i].DNI = n_dni;
+                                Guardar();
                                 Console.WriteLine("\nDNI cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -204,6 +255,7 @@ namespace TAREA11
                                 Console.WriteLine("\nIngrese nuevo tutor: ");
                                 string n_tutor = Console.ReadLine();
                                 Tramites[i].TutorProfesor = n_tutor;
+                                Guardar();
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -213,6 +265,7 @@ namespace TAREA11
                                 Console.WriteLine("\nIngrese nuevo grado: ");
                                 string n_grade = Console.ReadLine();
                                 Tramites[i].Grado = n_grade;
+                                Guardar();
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -222,6 +275,7 @@ namespace TAREA11
                                 Console.WriteLine("\nIngrese nueva seccion: ");
                                 string n_section = Console.ReadLine();
                                 Tramites[i].Seccion = n_section;
+                                Guardar();
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -231,6 +285,7 @@ namespace TAREA11
                                 Console.WriteLine("\nIngrese nueva nota: ");
                                 double n_note = int.Parse(Console.ReadLine());
                                 Tramites[i].Notas = n_note;
+                                Guardar();
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -300,6 +355,7 @@ namespace TAREA11
                         }
                         Tramites[cantidad - 1] = null;
                         cantidad--;
+                        Guardar();
                         Console.WriteLine("Alumno eliminaod con exito!");
                         Console.WriteLine("Presione cualquier tecla para continuar...");
                         Console.ReadKey();
@@ -605,6 +661,7 @@ namespace TAREA11
                     }
                 }
             }
+            Guardar();
             Console.WriteLine("Tramites ordenados por burbuja");
         }
 
@@ -627,6 +684,7 @@ namespace TAREA11
 
                 Console.WriteLine("Tramites ordenados por Seleccion");
             }
+            Guardar();
         }
 
         public void MayorNota()
