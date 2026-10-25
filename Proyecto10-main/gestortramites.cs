@@ -12,14 +12,15 @@ namespace TAREA11
 {
     public class gestortramites
     {
-        public tramites[] Tramites = new tramites[50];
-        public int cantidad = 0;
-        public string ruta = "tramites.txt";
-
         public gestortramites()
         {
             Cargar();
         }
+        public tramites[] Tramites = new tramites[50];
+        public int cantidad = 0;
+        public string ruta = "tramites.txt";
+
+        
         public void Guardar()
         {
             StreamWriter archivo = new StreamWriter(ruta);

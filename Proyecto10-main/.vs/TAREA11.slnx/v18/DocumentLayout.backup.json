@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|c:\\users\\admin\\documents\\proyectoep1\\proyecto10-main\\gestortramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\gestortramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:gestortramites.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|c:\\users\\admin\\documents\\proyectoep1\\proyecto10-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A06DE0D4-09AE-48C4-9A38-3E038067567E}|TAREA11.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwCAAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-17T03:53:06.772Z",
               "EditorCaption": ""
@@ -45,7 +45,7 @@
               "RelativeDocumentMoniker": "gestortramites.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\gestortramites.cs",
               "RelativeToolTip": "gestortramites.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAwwLEAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwBQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-17T03:53:19.144Z",
               "EditorCaption": ""
@@ -58,7 +58,7 @@
               "RelativeDocumentMoniker": "tramites.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoEP1\\Proyecto10-main\\tramites.cs",
               "RelativeToolTip": "tramites.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-17T03:53:18.317Z"
             }
