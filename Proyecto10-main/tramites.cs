@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TAREA11
 {
+    [Serializable]
     public class tramites
     {
         public string CodigoAlumno { get; set; }
