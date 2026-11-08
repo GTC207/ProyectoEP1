@@ -9,7 +9,7 @@ using TAREA11;
 
 public class ArchivoTramites
 {
-
+    //Creacion de la clase ArchivoTramites
     public void GuardarTexto(string ruta, tramites[] lista, int cantidad)
     {
         StreamWriter sw = new StreamWriter(ruta);
