@@ -10,7 +10,7 @@ namespace TAREA11
     {
         static void Main(string[] args)
         {
-            
+            //Creacion del gestortramites
             gestortramites gestortramites = new gestortramites();
             int op = 0;
             
