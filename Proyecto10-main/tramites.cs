@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace TAREA11
 {
     [Serializable]
+    //crea clase tramites con atributos del alumno y profesor
     public class tramites
     {
         public string CodigoAlumno { get; set; }
