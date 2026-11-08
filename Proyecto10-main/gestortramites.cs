@@ -4,13 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace TAREA11
 {
     public class gestortramites
     {
-        public tramites[] Tramites = new tramites[50];
-        public int cantidad = 0;
+            public tramites[] Tramites = new tramites[50];
+            public int cantidad = 0;
+            ArchivoTramites Archivo = new ArchivoTramites();
+
+            public void GuardarTexto(string ruta)
+            {
+                Archivo.GuardarTexto(ruta, Tramites, cantidad);
+            }
+
+            public void LeerTexto(string ruta)
+            {
+                cantidad = Archivo.LeerTexto(ruta, Tramites);
+            }
+
+            public void GuardarBinario(string ruta)
+            {
+                Archivo.GuardarBinario(ruta, Tramites);
+            }
+
+            public void LeerBinario(string ruta)
+            {
+                Tramites = Archivo.LeerBinario(ruta);
+                cantidad = 0;
+                for (int i = 0; i < Tramites.Length; i++)
+                {
+                    if (Tramites[i] != null)
+                    {
+                        cantidad++;
+                    }
+                }
+            }
+        
+
         public void Registrar()
         {
             string respuesta;
@@ -706,5 +739,6 @@ namespace TAREA11
                 return;
             }
         }
+        
     }
 }
