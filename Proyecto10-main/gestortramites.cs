@@ -419,7 +419,7 @@ namespace TAREA11
                 }
 
             }
-            Console.WriteLine("No se encontraron resultados :( ");
+            Console.WriteLine("No se encontraron resultados :) ");
             Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
             respuesta = Console.ReadLine();
             if (respuesta.ToUpper() == "S")
