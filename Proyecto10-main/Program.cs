@@ -13,7 +13,7 @@ namespace TAREA11
             //Creacion del gestortramites
             gestortramites gestortramites = new gestortramites();
             int op = 0;
-            
+            //El menu de opciones del programa, con un bucle do while para que se repita hasta que el usuario decida salir
             do
             {
                 Console.WriteLine("\n==============================================================");
