@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchivoTramites.cs" />
-    <Compile Include="gestortramites.cs" />
+    <Compile Include="archivos\ArchivoTramites.cs" />
+    <Compile Include="servicio\gestortramites.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tramites.cs" />
+    <Compile Include="modelo\tramites.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
