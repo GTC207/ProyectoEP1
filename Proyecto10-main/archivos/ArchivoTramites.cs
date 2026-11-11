@@ -49,7 +49,8 @@ public class ArchivoTramites
                 datos[4],
                 datos[5],
                 datos[6],
-                Convert.ToDouble(datos[7])
+                Convert.ToDouble(datos[7]),
+                datos [8]
             );
             cantidad++;
         }

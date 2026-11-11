@@ -101,6 +101,16 @@ namespace TAREA11
 
                 string ProfesorFormateado = p_name1 + " " + p_name2;
                 //
+                Console.Write("\nCurso: ");
+                string curso = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(curso))
+                {
+                    Console.WriteLine("\nIngrese un curso valido!");
+                    Console.ReadKey();
+                    Registrar();
+                    return;
+                }
+                //
                 Console.Write("\nGrado: ");
                 string Grado = Console.ReadLine();
                 Console.Write("\nSeccion: ");
@@ -117,7 +127,7 @@ namespace TAREA11
                     return;
                 }
 
-                Tramites[cantidad] = new tramites(codigoAlumno.ToUpper(),dni, char.ToUpper(NombreAlumno[0])+NombreAlumno.Substring(1),ApellidosFormateados, ProfesorFormateado, Grado.ToLower(),Seccion.ToUpper(),nota);
+                Tramites[cantidad] = new tramites(codigoAlumno.ToUpper(), dni, char.ToUpper(NombreAlumno[0]) + NombreAlumno.Substring(1), ApellidosFormateados, ProfesorFormateado, Grado.ToLower(), Seccion.ToUpper(), nota, char.ToUpper(curso[0]) + curso.Substring(1));
                 cantidad++;
                 Console.WriteLine("\nTramite registrado");
 
@@ -188,6 +198,7 @@ namespace TAREA11
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                     Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
                     Console.Write("\nDesea continuar? (S/N) : ");
@@ -199,10 +210,11 @@ namespace TAREA11
                         Console.WriteLine("\n2. Apellidos");
                         Console.WriteLine("\n3. DNI del apoderado");
                         Console.WriteLine("\n4. Tutor a cargo");
-                        Console.WriteLine("\n5. Grado");
-                        Console.WriteLine("\n6. Seccion");
-                        Console.WriteLine("\n7. Notas");
-                        Console.WriteLine("\n8. Volver al inicio");
+                        Console.WriteLine("\n5. Curso");
+                        Console.WriteLine("\n6. Grado");
+                        Console.WriteLine("\n7. Seccion");
+                        Console.WriteLine("\n8. Notas");
+                        Console.WriteLine("\n9. Volver al inicio");
                         Console.Write("\nIngrese una opcion: ");
                         int _ = int.Parse(Console.ReadLine());
                         switch (_)
@@ -243,7 +255,17 @@ namespace TAREA11
                                 Console.ReadKey();
                                 Console.Clear();
                                 break;
-                            case 5:
+
+                            case 5: 
+                                Console.WriteLine("\nIngrese nuevo curso: ");
+                                string n_course = Console.ReadLine();
+                                Tramites[i].Curso = n_course;
+                                Console.WriteLine("\nNombre cambiado con exito!");
+                                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            case 6:
                                 Console.WriteLine("\nIngrese nuevo grado: ");
                                 string n_grade = Console.ReadLine();
                                 Tramites[i].Grado = n_grade;
@@ -252,7 +274,7 @@ namespace TAREA11
                                 Console.ReadKey();
                                 Console.Clear();
                                 break;
-                            case 6:
+                            case 7:
                                 Console.WriteLine("\nIngrese nueva seccion: ");
                                 string n_section = Console.ReadLine();
                                 Tramites[i].Seccion = n_section;
@@ -261,7 +283,7 @@ namespace TAREA11
                                 Console.ReadKey();
                                 Console.Clear();
                                 break;
-                            case 7:
+                            case 8:
                                 Console.WriteLine("\nIngrese nueva nota: ");
                                 double n_note = int.Parse(Console.ReadLine());
                                 Tramites[i].Notas = n_note;
@@ -270,11 +292,11 @@ namespace TAREA11
                                 Console.ReadKey();
                                 Console.Clear();
                                 break;
-                            case 8:
+                            case 9:
                                 Console.Clear();
                                 return;
                             default:
-                                Console.WriteLine("\nIngrese una opcion valida! <1-8>");
+                                Console.WriteLine("\nIngrese una opcion valida! <1-9>");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
                                 Console.Clear();
@@ -322,6 +344,7 @@ namespace TAREA11
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                     Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
                     Console.Write("\nDesea continuar? (S/N) : ");
@@ -355,6 +378,7 @@ namespace TAREA11
                     Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                     Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
+                    Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
@@ -402,6 +426,7 @@ namespace TAREA11
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                     Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
 
@@ -448,6 +473,7 @@ namespace TAREA11
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                     Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
 
@@ -493,9 +519,54 @@ namespace TAREA11
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                     Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
 
+                    Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
+                    respuesta = Console.ReadLine();
+                    if (respuesta.ToUpper() == "S")
+                    {
+                        buscar();
+                        return;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        return;
+                    }
+                }
+            }
+            Console.WriteLine("No se encontraron resultados");
+            Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
+            respuesta = Console.ReadLine();
+            if (respuesta.ToUpper() == "S")
+            {
+                buscar();
+                return;
+            }
+            else
+            {
+                Console.Clear();
+                return;
+            }
+        }
+        public void BuscarPorCurso(string curso)
+        {
+            string respuesta;
+            Console.Clear();
+            for (int i = 0; i < cantidad; i++)
+            {
+                if (Tramites[i].Curso.Equals(char.ToUpper(curso[0]) + curso.Substring(1)))
+                {
+                    Console.WriteLine("\nTrámite localizado: ");
+                    Console.WriteLine($"\nCodigo Alumno : {Tramites[i].CodigoAlumno}");
+                    Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
+                    Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
+                    Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
+                    Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
+                    Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
                     Console.WriteLine("\nDesea buscar otro alumno? (S/N) :");
                     respuesta = Console.ReadLine();
                     if (respuesta.ToUpper() == "S")
@@ -538,6 +609,7 @@ namespace TAREA11
                     Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                     Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                     Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
                     Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                     Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
 
@@ -580,8 +652,9 @@ namespace TAREA11
             Console.WriteLine("\n2. Buscar por nombre");
             Console.WriteLine("\n3. Buscar por apellidos");
             Console.WriteLine("\n4. Buscar por tutos o profesor");
-            Console.WriteLine("\n5. Buscar por nota");
-            Console.WriteLine("\n6. Volver al menu");
+            Console.WriteLine("\n6. Buscar por curso");
+            Console.WriteLine("\n7. Buscar por nota");
+            Console.WriteLine("\n8. Volver al menu");
             Console.Write("\nIngrese una opcion: ");
             int _ = int.Parse(Console.ReadLine());
             switch (_)
@@ -607,11 +680,16 @@ namespace TAREA11
                     BuscarPorProfesor(proffesor);
                     break;
                 case 5:
+                    Console.Write("\nIngrese el curso del alumno a buscar: ");
+                    string curso = Console.ReadLine();
+                    BuscarPorCurso(curso);
+                    break;
+                case 6:
                     Console.WriteLine("\nIngrese la nota del alumno a buscar: ");
                     double note = int.Parse(Console.ReadLine());
                     BuscarPorNota(note);
                     break;
-                case 6:
+                case 7:
                     Console.Clear();
                     return;
                 default:
@@ -691,6 +769,7 @@ namespace TAREA11
                     Console.WriteLine($"NombreAlumno: {Tramites[i].NombreAlumno}");
                     Console.WriteLine($"Grado: {Tramites[i].Grado}");
                     Console.WriteLine($"Seccion: {Tramites[i].Seccion}");
+                    Console.WriteLine($"Curso: {Tramites[i].Curso}");
                     Console.WriteLine($"Notas: {Tramites[i].Notas}");
                 }
             }
@@ -715,9 +794,9 @@ namespace TAREA11
                     Console.WriteLine($"Estudiante: {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}\n");
                     Console.WriteLine($"DNI del apoderado: {Tramites[i].DNI}");
                     Console.WriteLine("---------------------------------------------------------------------");
-                    Console.WriteLine($"\nDocente a cargo:{Tramites[i].TutorProfesor}");
+                    Console.WriteLine($"\nDocente a cargo:{Tramites[i].TutorProfesor}\t || Curso: {Tramites[i].Curso}");
                     Console.WriteLine("---------------------------------------------------------------------");
-                    Console.WriteLine($"\nGrado: {Tramites[i].Grado}\t||  Seccion: {Tramites[i].Seccion}");
+                    Console.WriteLine($"\nGrado: {Tramites[i].Grado}\t||  Seccion: {Tramites[i].Seccion}"); 
                     Console.WriteLine("---------------------------------------------------------------------");
                     Console.WriteLine($"Estimado(a) apoderado(a)\nNos complace informar que el estudiante {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno} ha obtenido una calificación de {Tramites[i].Notas}. Este resultado \nrefleja su esfuerzo, dedicación y compromiso con sus actividades académicas.\n\nFelicitamos al estudiante por este importante logro y reconocemos el apoyo constante de su familia en su proceso de \naprendizaje. \n\nConfiamos en que continuará desarrollando sus capacidades, alcanzando nuevas metas y superándose día a día.\n\nLe animamos a seguir manteniendo el entusiasmo, la responsabilidad y la perseverancia que le permitirán continuar \ncreciendo tanto académica como personalmente.");
                     Console.WriteLine("\n\nPresione cualquier tecla para continuar...");

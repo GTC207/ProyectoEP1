@@ -15,17 +15,19 @@ namespace TAREA11
         public string NombreAlumno { get; set; }
         public string ApellidosAlumno { get; set;}
         public string TutorProfesor { get; set; }
+        public string Curso { get; set; }
         public string Grado { get; set; }
         public string Seccion { get; set; }
         public double Notas { get; set; }   
 
-        public tramites(string codigoalumno,string dni, string nombrealumno,string apellidosalumno,string tutorprofesor, string grado, string seccion, double notas)
+        public tramites(string codigoalumno,string dni, string nombrealumno,string apellidosalumno,string tutorprofesor, string grado, string seccion, double notas, string curso)
         {
             CodigoAlumno = codigoalumno;
             DNI = dni;
             NombreAlumno = nombrealumno;
             ApellidosAlumno = apellidosalumno;
             TutorProfesor = tutorprofesor;
+            Curso = curso;
             Grado = grado;
             Seccion = seccion;
             Notas = notas;
