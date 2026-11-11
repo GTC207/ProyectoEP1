@@ -172,6 +172,7 @@ namespace TAREA11
                 Console.WriteLine($"\n\tNombre : {Tramites[i].NombreAlumno} {Tramites[i].ApellidosAlumno}");
                 Console.WriteLine($"\n\tDNI de apoderado: {Tramites[i].DNI}");
                 Console.WriteLine($"\n\tProfesor o tutor: {Tramites[i].TutorProfesor}");
+                Console.WriteLine($"\n\tCurso : {Tramites[i].Curso}");
                 Console.WriteLine($"\n\tGrado : {Tramites[i].Grado}\t|| Seccion : {Tramites[i].Seccion}");
                 Console.WriteLine($"\n\tNotas : {Tramites[i].Notas}");
             }
