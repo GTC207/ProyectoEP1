@@ -325,7 +325,7 @@ namespace TAREA11
 
             }
         }
-
+    // :)
         public void EliminarRegistro()
         {
             string respuesta;
