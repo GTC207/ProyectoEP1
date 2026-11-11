@@ -9,7 +9,7 @@ Sistema de consola desarrollado en C# para administrar los trámites de los alum
 | [Franchesca Paola Cherrez Espinoza] | [Franches-upn] | [ ordenamiento con el git  y estructura de las clases ] |
 | [GIANPIERO TORRES CASACHAHUA] | [GTC207] | [desarrollo del sistema de la clase gestortramites, tramites] |
 | [KAREN JUDITH PAUCAR MENDIETA ] | [] | [implementacion de metodos ] |
-| [LEYLA ANDREA POMA ARROYO ] | [] |andrea-an037 [implementacion de textos binario para no perder el registro y se pueda guardar] |
+| [LEYLA ANDREA POMA ARROYO ] | [andrea-an037] | [implementacion de textos binario para no perder el registro y se pueda guardar] |
 | [ALEXIS MICHAEL CERCADO CRUZADO] | [] | [Ver errores en el sistema y probando el sistema para que no haya ningún error al momento de registrar a un alumno] |
 
 ## Tecnologías
