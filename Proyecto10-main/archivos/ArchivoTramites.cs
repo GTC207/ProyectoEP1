@@ -43,7 +43,7 @@ public class ArchivoTramites
             string[] datos = linea.Split(';');
             lista[cantidad] = new tramites(
                 datos[0],
-                Convert.ToInt32(datos[1]),
+                datos[1],
                 datos[2],
                 datos[3],
                 datos[4],

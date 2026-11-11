@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+
 namespace TAREA11
 {
     public class gestortramites
@@ -64,8 +65,8 @@ namespace TAREA11
                     return;
                 }
                 Console.Write("\nDNI del apoderado: ");
-                int dni = int.Parse(Console.ReadLine());
-                if (dni.ToString().Length != 8)
+                string  dni = (Console.ReadLine());
+                if (dni.Length != 8 || !dni.All(char.IsDigit))
                 {
                     Console.WriteLine("\nIngrese un DNI valido!");
                     Console.WriteLine("\nPresiones cualquier tecla para continuar...");
@@ -226,7 +227,7 @@ namespace TAREA11
                                 break;
                             case 3:
                                 Console.WriteLine("\nIngrese nuevo DNI: ");
-                                int n_dni = int.Parse(Console.ReadLine());
+                                string n_dni = (Console.ReadLine());
                                 Tramites[i].DNI = n_dni;
                                 Console.WriteLine("\nDNI cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
