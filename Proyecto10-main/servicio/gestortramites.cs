@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 
 
 namespace TAREA11
@@ -43,6 +44,17 @@ namespace TAREA11
                     }
                 }
             }
+        public string Formateo(string nl)
+        {
+            int espacio = nl.IndexOf(' ');
+            string n_l = nl.Substring(0, espacio);
+            string n_l2 = nl.Substring(espacio + 1);
+
+            n_l = char.ToUpper(n_l[0]) + n_l.Substring(1);
+            n_l2 = char.ToUpper(n_l2[0]) + n_l2.Substring(1);
+
+            return n_l + " " + n_l2;
+        }
         
 
         public void Registrar()
@@ -79,27 +91,13 @@ namespace TAREA11
                 Console.Write("\nApellidos del alumno: ");
                 string ApellidoAlumno = Console.ReadLine();
                 //Formato de los apellidos
-                int espacio = ApellidoAlumno.IndexOf(' ');
-                string apellido1 = ApellidoAlumno.Substring(0, espacio);
-                string apellido2 = ApellidoAlumno.Substring(espacio + 1);
-
-                apellido1 = char.ToUpper(apellido1[0]) + apellido1.Substring(1);
-                apellido2 = char.ToUpper(apellido2[0]) + apellido2.Substring(1);
-
-                string ApellidosFormateados = apellido1 + " " + apellido2;
+                string ApellidosFormateados = Formateo(ApellidoAlumno);
                 //
 
                 Console.Write("\nProfesor o Tutor: ");
                 string p_name = Console.ReadLine();
                 //Formato al nombre del profesor
-                int space = p_name.IndexOf(' ');
-                string p_name1 = p_name.Substring(0, space);
-                string p_name2 = p_name.Substring(space + 1);
-
-                p_name1 = char.ToUpper(p_name1[0]) + p_name1.Substring(1);
-                p_name2 = char.ToUpper(p_name2[0]) + p_name2.Substring(1);
-
-                string ProfesorFormateado = p_name1 + " " + p_name2;
+                string ProfesorFormateado = Formateo(p_name);
                 //
                 Console.Write("\nCurso: ");
                 string curso = Console.ReadLine();
@@ -223,8 +221,8 @@ namespace TAREA11
                             case 1:
                                 Console.WriteLine("\nIngrese nuevo nombre: ");
                                 string n_name = Console.ReadLine();
-                                Tramites[i].NombreAlumno = n_name;
-                                Console.WriteLine("\nNombre cambiado con exito!");
+                                Tramites[i].NombreAlumno = char.ToUpper(n_name[0]) + n_name.Substring(1);
+                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
                                 Console.Clear();
@@ -232,7 +230,7 @@ namespace TAREA11
                             case 2:
                                 Console.WriteLine("\nIngrese nuevos apellidos: ");
                                 string nl_name = Console.ReadLine();
-                                Tramites[i].ApellidosAlumno = nl_name;
+                                Tramites[i].ApellidosAlumno = Formateo(nl_name);
                                 Console.WriteLine("\nApellidos cambiados con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -241,6 +239,14 @@ namespace TAREA11
                             case 3:
                                 Console.WriteLine("\nIngrese nuevo DNI: ");
                                 string n_dni = (Console.ReadLine());
+                                if (n_dni.Length != 8 || !n_dni.All(char.IsDigit))
+                                {
+                                    Console.WriteLine("\nIngrese un DNI valido!");
+                                    Console.WriteLine("\nPresiones cualquier tecla para continuar...");
+                                    Console.ReadKey();
+                                    ModificarRegistro();
+                                    return;
+                                }
                                 Tramites[i].DNI = n_dni;
                                 Console.WriteLine("\nDNI cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
@@ -250,7 +256,7 @@ namespace TAREA11
                             case 4:
                                 Console.WriteLine("\nIngrese nuevo tutor: ");
                                 string n_tutor = Console.ReadLine();
-                                Tramites[i].TutorProfesor = n_tutor;
+                                Tramites[i].TutorProfesor = Formateo(n_tutor);
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -278,7 +284,7 @@ namespace TAREA11
                             case 7:
                                 Console.WriteLine("\nIngrese nueva seccion: ");
                                 string n_section = Console.ReadLine();
-                                Tramites[i].Seccion = n_section;
+                                Tramites[i].Seccion = n_section.ToUpper();
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                                 Console.ReadKey();
@@ -287,6 +293,15 @@ namespace TAREA11
                             case 8:
                                 Console.WriteLine("\nIngrese nueva nota: ");
                                 double n_note = int.Parse(Console.ReadLine());
+                                if (n_note < 0 || n_note > 20)
+                                {
+                                    Console.WriteLine("\nIngrese una nota valida! <0-20>");
+                                    Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    Registrar();
+                                    return;
+                                }
                                 Tramites[i].Notas = n_note;
                                 Console.WriteLine("\nNombre cambiado con exito!");
                                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
@@ -688,6 +703,15 @@ namespace TAREA11
                 case 6:
                     Console.WriteLine("\nIngrese la nota del alumno a buscar: ");
                     double note = int.Parse(Console.ReadLine());
+                    if (note < 0 || note > 20)
+                    {
+                        Console.WriteLine("\nIngrese una nota valida! <0-20>");
+                        Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                        Console.ReadKey();
+                        Console.Clear();
+                        ModificarRegistro();
+                        return;
+                    }
                     BuscarPorNota(note);
                     break;
                 case 7:
