@@ -20,6 +20,7 @@ public class ArchivoTramites
                          lista[i].NombreAlumno + ";" +
                          lista[i].ApellidosAlumno + ";" +
                          lista[i].TutorProfesor + ";" +
+                         lista[i].Curso + ";" +
                          lista[i].Grado + ";" +
                          lista[i].Seccion + ";" +
                          lista[i].Notas);
@@ -41,6 +42,10 @@ public class ArchivoTramites
         while ((linea = sr.ReadLine()) != null)
         {
             string[] datos = linea.Split(';');
+            if (datos.Length < 9)
+            {
+                continue; // salta líneas vacías o incompletas
+            }
             lista[cantidad] = new tramites(
                 datos[0],
                 datos[1],
